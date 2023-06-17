@@ -20,13 +20,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route Home
+
 Route::get('home', [HomeController::class, 'index'])->name('home');
-
-// Route profile
 Route::get('profile', ProfileController::class)->name('profile');
-
-// Route employees
 Route::resource('employees', EmployeeController::class);
-
-
