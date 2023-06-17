@@ -1,9 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-//digunakan untuk memanggil Controller Prifle
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
-//Digunakan untuk memanggil Controller Employee
 use App\Http\Controllers\EmployeeController;
 
 /*
@@ -21,8 +20,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//Routing Profile
-Route::get('profile', ProfileController::class)->name('profile');
 
-//Routing Employee
+Route::get('home', [HomeController::class, 'index'])->name('home');
+Route::get('profile', ProfileController::class)->name('profile');
 Route::resource('employees', EmployeeController::class);
