@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+//digunakan untuk memanggil Controller Prifle
+use App\Http\Controllers\ProfileController;
+//Digunakan untuk memanggil Controller Employee
+use App\Http\Controllers\EmployeeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +20,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+//Routing Profile
+Route::get('profile', ProfileController::class)->name('profile');
+
+//Routing Employee
+Route::resource('employees', EmployeeController::class);
